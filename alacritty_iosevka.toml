@@ -1,0 +1,13 @@
+[font]
+normal =      { family = "IosevkaTerm Nerd Font Mono", style = "Light" }
+bold =        { family = "IosevkaTerm Nerd Font Mono", style = "Regular" }
+italic =      { family = "IosevkaTerm Nerd Font Mono", style = "Light Italic" }
+bold_italic = { family = "IosevkaTerm Nerd Font Mono", style = "Italic" }
+
+[keyboard]
+bindings = [
+  { key = "=", mods = "Control",         action = "IncreaseFontSize" },
+  { key = "-", mods = "Control",         action = "DecreaseFontSize" },
+  { key = "C", mods = "Control|Shift",   action = "Copy" },
+  { key = "V", mods = "Control|Shift",   action = "Paste" },
+]
