@@ -1,0 +1,20 @@
+
+body.platform-windows,
+body.platform-linux,
+:host-context(.platform-windows),
+:host-context(.platform-linux) {
+    --monospace-font-size: 12px !important;
+    --monospace-font-family: "Hack Nerd Font Mono", monospace !important;
+    --source-code-font-size: 12px !important;
+    --source-code-font-family: "Hack Nerd Font Mono", monospace !important;
+}
+
+.monospace {
+    font-size: var(--monospace-font-size);
+    font-family: var(--monospace-font-family);
+}
+
+.source-code {
+    font-size: var(--source-code-font-size);
+    font-family: var(--source-code-font-family);
+}
