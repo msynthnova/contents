@@ -1,4 +1,4 @@
-PS1="%F{red} %~% %F{blue}  %F{white}"
+PS1="%F{blue} %~% %F{blue}  %F{white}"
 set -o vi
 alias vim="nvim"
 alias vi="nvim"
