@@ -22,7 +22,17 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     { "echasnovski/mini.surround", version = "*", config = function() require("mini.surround").setup() end },
-    { "nvim-treesitter/nvim-treesitter", config = function() require("nvim-treesitter.configs").setup({ auto_install = false, ensure_installed = {}, highlight = { enable = true }}) end }, 
+    { "nvim-treesitter/nvim-treesitter", config = function() require("nvim-treesitter.configs").setup({ auto_install = false, ensure_installed = {}, highlight = {
+        enable = true,
+        disable = function(lang, buf)
+            local max_filesize = 1000 * 1024 -- 100 KB
+            local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+            if ok and stats and stats.size > max_filesize then
+                return true
+            end
+        end,
+    }
+    }) end }, 
     { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...}
 })
 
