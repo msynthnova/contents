@@ -1,0 +1,17 @@
+#create img
+qemu-img create -f raw disk1.img 100G
+
+#first startup
+qemu-system-x86_64 -enable-kvm -cpu host \
+-smp 8 \
+-m 10G \
+-drive file=disk1.img,if=virtio,cache=none \
+-cdrom ~/code/isos/archlinux-2024.10.01-x86_64.iso \
+-boot d -vga virtio -display sdl,gl=on
+
+#startup
+qemu-system-x86_64 -enable-kvm -cpu host \
+-smp 8 \
+-m 10G \
+-drive file=disk1.img,if=virtio,cache=none \
+-boot d -vga virtio -display sdl,gl=on
