@@ -1,0 +1,20 @@
+create image: qemu-img create -f raw Image1.img
+first boot add: -cdrom ~/code/isos/arch.iso
+
+running:
+qemu-system-x86_64 \
+-enable-kvm \
+-cpu host \
+-m 10G \
+-object memory-backend-file,size=10G,mem-path=/dev/hugepages,share=on,id=mem0 \
+-mem-prealloc \
+-smp cpus=6,sockets=1,cores=6,threads=1 \
+-numa node,memdev=mem0,cpus=0-5 \
+-drive file=Image1.img,if=none,cache=none,id=drive0 \
+-device virtio-blk-pci,drive=drive0 \
+-device virtio-net-pci,netdev=net0 \
+-netdev user,id=net0 \
+-object iothread,id=iothread0 \
+-device virtio-scsi-pci \
+-append "console=ttyS0" \
+-serial stdio
