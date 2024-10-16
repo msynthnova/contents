@@ -6,7 +6,7 @@ input "type:keyboard" {
 input "type:pointer" {
     natural_scroll enabled 
     accel_profile "flat"
-    pointer_accel 0
+    pointer_accel -0.2
 }
 
 set $mod Mod1
@@ -18,6 +18,8 @@ set $term kitty
 set $menu fuzzel 
 output HDMI-A-4 scale 2
 output HDMI1 pos 0 0 res 3840x2160 
+bindsym $mod+Up exec pactl set-sink-volume alsa_output.pci-0000_01_00.1.hdmi-stereo-extra3 +10%
+bindsym $mod+Down exec pactl set-sink-volume alsa_output.pci-0000_01_00.1.hdmi-stereo-extra3 -10%
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu
@@ -26,10 +28,6 @@ bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
 bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
