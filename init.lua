@@ -10,6 +10,8 @@ vim.opt.termguicolors = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.signcolumn = "yes"
 vim.opt.background = "dark"
+vim.opt.pumheight = 5 -- limit completion items
+
 
 local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
@@ -79,7 +81,7 @@ require("lazy").setup({
                     end,
                 },
                 mapping =  {
-                    ['<CR>'] = cmp.mapping(function(fallback)
+                    ["<CR>"] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                             -- Check if Tab was pressed to confirm selection
                             if cmp.get_selected_entry() then
@@ -116,17 +118,17 @@ require("lazy").setup({
 
                 },
                 sources = cmp.config.sources({
-                    { name = "luasnip" }, -- For luasnip users.
-                }, {
                     { name = "buffer" },
                     { name = "path" },
-                })
+                    { name = "nvim_lsp" }
+                }),
             })
         end, 
     },
     "hrsh7th/cmp-buffer",
     "L3MON4D3/LuaSnip",
     "hrsh7th/cmp-path",
+    "hrsh7th/cmp-nvim-lsp",
     {
         "kylechui/nvim-surround",
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -136,6 +138,16 @@ require("lazy").setup({
                 -- Configuration here, or leave empty to use defaults
             })
         end
+    },
+    {
+        "neovim/nvim-lspconfig",
+        config = function()
+            local lsp = require("lspconfig")
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            lsp.clangd.setup {
+                capabilities = capabilities,
+            }
+        end,
     }
 },
 
