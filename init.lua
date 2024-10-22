@@ -11,7 +11,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.signcolumn = "yes"
 vim.opt.background = "dark"
 vim.opt.pumheight = 5 -- limit completion items
-
+vim.g.mapleader = " "
 
 local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
@@ -22,6 +22,12 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<S-h>", "<CMD>bprevious<CR>", opts)
+keymap("n", "<S-l>", "<CMD>bnext<CR>", opts)
+keymap("n", "<leader>t", ":term<CR>", opts)
+keymap("n", "<leader>e", ":e .<CR>", opts)
+keymap("n", "<leader>l", ":ls<CR>", opts)
+keymap("n", "<leader>b", ":b ", opts)
 
 -- Define highlight groups for different modes
 vim.api.nvim_set_hl(0, "StatusLineNormal", { fg = "#ffffff", bg = "#005f5f" })
