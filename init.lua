@@ -28,6 +28,7 @@ keymap("n", "<leader>t", ":term<CR>", opts)
 keymap("n", "<leader>e", ":e .<CR>", opts)
 keymap("n", "<leader>l", ":ls<CR>", opts)
 keymap("n", "<leader>b", ":b ", opts)
+keymap("n", "<leader>d", ":bd ", opts)
 
 -- Define highlight groups for different modes
 vim.api.nvim_set_hl(0, "StatusLineNormal", { fg = "#ffffff", bg = "#005f5f" })
