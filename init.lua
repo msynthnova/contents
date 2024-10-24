@@ -159,7 +159,7 @@ require("lazy").setup({
 },
 
 -- automatically check for plugin updates
-checker = { enabled = true },
+checker = { enabled = false },
 })
 
 vim.cmd("syntax off")
