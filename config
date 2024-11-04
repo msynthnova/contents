@@ -1,41 +1,43 @@
 input "type:keyboard" {
     repeat_delay 200   
-    repeat_rate 40
+        repeat_rate 40
 }
 
 input "type:pointer" {
     natural_scroll enabled 
-    accel_profile "flat"
-    pointer_accel -0.2
+        accel_profile "flat"
+        pointer_accel -0.2
 }
 
-set $mod Mod1
+set $mod Mod4
 set $left h
 set $down j
 set $up k
 set $right l
 set $term kitty 
-set $menu fuzzel 
+
 output HDMI-A-4 scale 2
 output HDMI1 pos 0 0 res 3840x2160 
-bindsym $mod+Up exec pactl set-sink-volume alsa_output.pci-0000_01_00.1.hdmi-stereo-extra3 +10%
-bindsym $mod+Down exec pactl set-sink-volume alsa_output.pci-0000_01_00.1.hdmi-stereo-extra3 -10%
+
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec $menu
 bindsym $mod+Shift+c reload
+
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
+
 bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
+
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+
 # Switch to workspace
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
@@ -47,6 +49,7 @@ bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
+
 # Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2
@@ -70,19 +73,19 @@ bindsym $mod+space focus mode_toggle
 
 mode "resize" {
     bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+        bindsym $down resize grow height 10px
+        bindsym $up resize shrink height 10px
+        bindsym $right resize grow width 10px
 
-    # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+# Ditto, with arrow keys
+        bindsym Left resize shrink width 10px
+        bindsym Down resize grow height 10px
+        bindsym Up resize shrink height 10px
+        bindsym Right resize grow width 10px
 
-    # Return to default mode
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+# Return to default mode
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
