@@ -25,6 +25,8 @@ bindsym $mod+b exec firefox
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
 
+bindsym $mod+up exec pactl set-sink-volume 49 +10%
+bindsym $mod+down exec pactl set-sink-volume 49 -10%
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
