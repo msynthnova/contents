@@ -22,6 +22,8 @@ output HDMI1 pos 0 0 res 3840x2160
 
 bindsym $mod+Return exec $term
 bindsym $mod+b exec firefox
+bindsym $mod+s exec fuzzel 
+bindsym $mod+o exec grim -g "$(slurp)" - | wl-copy
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
 
