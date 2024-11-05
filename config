@@ -105,4 +105,6 @@ bar {
     }
 }
 
+font pango:Courier Prime 10
+
 include /etc/sway/config.d/*
