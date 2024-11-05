@@ -24,6 +24,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+b exec firefox
 bindsym $mod+s exec fuzzel 
 bindsym $mod+o exec grim -g "$(slurp)" - | wl-copy
+bindsym $mod+i exec grim -g "$(slurp)" ~/Downloads/screenshot_$(date +%Y%m%d_%H%M%S).png
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
 
