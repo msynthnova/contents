@@ -93,4 +93,16 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+bar {
+    status_command ~/.config/sway/status.sh 
+
+    position top
+    font pango:Courier Prime 10
+    colors {
+        background #282828
+        statusline #ebdbb2
+        separator #458588
+    }
+}
+
 include /etc/sway/config.d/*
