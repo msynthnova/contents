@@ -1,0 +1,22 @@
+[Unit]
+Description=Minecraft Server
+After=network.target
+
+[Service]
+User=minecraft
+Group=minecraft
+WorkingDirectory=/home/felix/minecraft-server
+
+# Start Minecraft server with 1GB min and 2GB max RAM
+ExecStart=/usr/bin/java -Xms14G -Xmx14G -jar server.jar nogui
+Restart=on-failure
+RestartSec=20
+
+# Keep the process isolated for security
+NoNewPrivileges=true
+ProtectSystem=full
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
