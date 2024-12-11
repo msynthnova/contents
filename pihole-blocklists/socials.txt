@@ -1162,3 +1162,53 @@
 ||youtube-nocookie.com^
 
 ||reddit.com^
+
+# This blocklist helps Adguard admin restrict access to tiktok and its domains.
+# Curated from sources online.
+# Last updated: 9 december 2019
+
+||api-h2.tiktokv.com^
+||api21-h2.tiktokv.com^
+||ns-440.awsdns-55.com^
+||ns-722.awsdns-26.net^
+||ns-1475.awsdns-56.org^
+||ns-1574.awsdns-04.co.uk^
+||tiktokcdn-com.akamaized.net^
+||m.tiktok.com^
+||t.tiktok.com^
+||tiktok.com^
+||tiktok.org^
+||tiktokcdn.com^
+||tiktokv.com^
+||vt.tiktok.com^
+||v19.tiktokcdn.com^
+||v16.tiktokcdn.com^
+||api.tiktokv.com^
+||mon.tiktokv.com^
+||ib.tiktokv.com^
+||p16-tiktokcdn-com.akamaized.net^
+||v16-tiktokcdn-com.akamaized.net^
+||47.252.102.50^
+||161.117.71.74^
+||47.252.102.182^
+||161.117.71.35^
+||161.117.70.89^
+||161.117.70.145^
+||161.117.70.136^
+||47.252.50.101^
+||47.252.102.193^
+||161.117.71.34^
+||161.117.71.73^
+||47.252.102.48^
+||47.252.50.157^
+||34.196.79.125^
+||47.252.102.198^
+||161.117.70.68^
+||musical.ly^
+||muscdn.com^
+||isnssdk.com^
+||musemuse.cn^
+||tiktokcdn-us.com^
+||search16-normal-c-useast1a.tiktokv.com^
+||a1838.dscw154.akamai.net^
+||e673.dscx.akamaiedge.net^
