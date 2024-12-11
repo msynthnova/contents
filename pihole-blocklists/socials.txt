@@ -1178,6 +1178,7 @@
 ||t.tiktok.com^
 ||tiktok.com^
 ||tiktok.org^
+||www.tiktok.com^
 ||tiktokcdn.com^
 ||tiktokv.com^
 ||vt.tiktok.com^
